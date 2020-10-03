@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 const data = [
     {
         tab: "React Practice",
-        title: "Tab 1: Learning React For Dayzz",
+        title: "Learning React For Dayzz",
         image: require('../../../Images/store.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         tab: 'Proptypes in React',
-        title: "Tab 2: Trying to use PropTypes more in Development",
+        title: "Attempt to use PropTypes more",
         image: require('../../../Images/road.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         tab: 'React Native',
-        title: "Tab 3: Trying React Native slows down my PC alot...",
+        title: "React Native kills my CPU",
         image: require('../../../Images/glacier.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     }
@@ -28,24 +28,26 @@ const Tabs = () => {
     return (
         <section className="container">
             <div className="row py-3">
-                {data.map((list, index) =>
-                    <TabLabel
-                        key={`${index} + tab`}
-                        tab={list.tab}
-                        index={index}
-                        state={activeTab}
-                        handler={setActiveState}
-                    />)
+                {
+                    data.map((list, index) =>
+                        <TabLabel
+                            key={`${index} + tab`}
+                            tab={list.tab}
+                            index={index}
+                            state={activeTab}
+                            handler={setActiveState}
+                        />)
                 }
             </div>
             <div className="py-3">
-                {data.map((list, index) =>
-                    <TabContent
-                        key={`${index} + content`}
-                        content={list}
-                        index={index}
-                        state={activeTab}
-                    />)
+                {
+                    data.map((list, index) =>
+                        <TabContent
+                            key={`${index} + content`}
+                            content={list}
+                            index={index}
+                            state={activeTab}
+                        />)
                 }
             </div>
         </section>

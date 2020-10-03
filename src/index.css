@@ -23,3 +23,16 @@ img.img-med{
   min-width: 10rem;
   max-width: 30rem;
 }
+img.thumbnail{
+  height: auto;
+  min-width: 6rem;
+  max-width: 9rem;
+}
+img.img-main{
+  height: auto;
+  min-width: 15rem;
+  max-width: 45rem;
+}
+img.img-opacity{
+  opacity: 0.7
+}
