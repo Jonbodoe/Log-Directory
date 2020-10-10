@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Container from './../../../Components/Container'
 
 const data = [
     {
@@ -26,8 +27,9 @@ const data = [
 const Tabs = () => {
     const [activeTab, setActiveState] = useState(0)
     return (
-        <section className="container">
-            <div className="row py-3">
+        <Container>
+            <div className="py-3">
+                <div className="row">
                 {
                     data.map((list, index) =>
                         <TabLabel
@@ -38,8 +40,7 @@ const Tabs = () => {
                             handler={setActiveState}
                         />)
                 }
-            </div>
-            <div className="py-3">
+                </div>
                 {
                     data.map((list, index) =>
                         <TabContent
@@ -50,13 +51,12 @@ const Tabs = () => {
                         />)
                 }
             </div>
-        </section>
+        </Container>
     )
 }
 
 const TabLabel = props => {
-    return <>
-        <div className="p-2">
+    return <div className="p-2">
             <button
                 data-tab-id={props.index}
                 className={props.index === props.state ? `btn btn-primary` : `btn btn-light`}
@@ -65,7 +65,6 @@ const TabLabel = props => {
                 {props.tab}
             </button>
         </div>
-    </>
 }
 
 const TabContent = props => {
