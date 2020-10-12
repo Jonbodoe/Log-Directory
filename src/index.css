@@ -26,12 +26,7 @@ img.img-med{
 img.thumbnail{
   height: auto;
   min-width: 6rem;
-  max-width: 9rem;
-}
-img.img-main{
-  height: auto;
-  min-width: 15rem;
-  max-width: 45rem;
+  max-width: 9.5rem;
 }
 img.img-opacity{
   opacity: 0.7

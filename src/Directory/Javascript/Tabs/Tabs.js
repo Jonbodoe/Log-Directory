@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Container from './../../../Components/Container'
+// import Container from './../../../Components/Container'
+import Title from '../../../Components/Title';
 
 const data = [
     {
         tab: "React Practice",
         title: "Learning React For Dayzz",
-        image: require('../../../Images/store.jpg'),
+        image: require('./Images/store.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         tab: 'Proptypes in React',
         title: "Attempt to use PropTypes more",
-        image: require('../../../Images/road.jpg'),
+        image: require('./Images/road.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
         tab: 'React Native',
         title: "React Native kills my CPU",
-        image: require('../../../Images/glacier.jpg'),
+        image: require('./Images/glacier.jpg'),
         message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     }
 ]
@@ -27,8 +28,9 @@ const data = [
 const Tabs = () => {
     const [activeTab, setActiveState] = useState(0)
     return (
-        <Container>
-            <div className="py-3">
+        <>
+            <Title title={`Tabs`}/>
+            <div>
                 <div className="row">
                 {
                     data.map((list, index) =>
@@ -51,7 +53,7 @@ const Tabs = () => {
                         />)
                 }
             </div>
-        </Container>
+        </>
     )
 }
 
@@ -59,7 +61,7 @@ const TabLabel = props => {
     return <div className="p-2">
             <button
                 data-tab-id={props.index}
-                className={props.index === props.state ? `btn btn-primary` : `btn btn-light`}
+                className={props.index === props.state ? `btn btn-success` : `btn btn-light`}
                 onClick={() => props.handler(props.index)}
             >
                 {props.tab}
@@ -72,7 +74,7 @@ const TabContent = props => {
         <div className={props.index === props.state ? 'active' : 'not-active'}>
             <div className="d-flex">
                 <div className="pr-5 align-self-center">
-                    <h2 className="font-weight-bold">{props.content.title}</h2>
+                    <h3 className="font-weight-bold">{props.content.title}</h3>
                     <p>{props.content.message}</p>
                 </div>
                 <img className="img-fluid img-med" src={props.content.image} alt="hello" />

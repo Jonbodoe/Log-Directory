@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Title from '../../../Components/Title';
 // import PropTypes from 'prop-types';
 const api = "https://api.open5e.com/monsters/?format=json"
 const Http = () => {
@@ -19,7 +20,8 @@ const Http = () => {
     }, [])
     // console.log(monsterList)
     return (
-        <section className="container">
+        <>
+            <Title title={`Tabs`} />
             <table className="table">
                 {/* <TableRow/> */}
                 <thead>
@@ -31,19 +33,19 @@ const Http = () => {
                     </tr>
                 </thead>
                 {/* <tbody> */}
-                    {
-                        monsterList.length ?
-                            monsterList.map((item,index) => {
-                                return <tbody key={index}>
-                                    <TableRow content={item} />   
-                                </tbody>  
-                            })
-                            :
-                            <></>
-                    }
+                {
+                    monsterList.length ?
+                        monsterList.map((item, index) => {
+                            return <tbody key={index}>
+                                <TableRow content={item} />
+                            </tbody>
+                        })
+                        :
+                        <></>
+                }
                 {/* </tbody> */}
             </table>
-        </section>
+        </>
     )
 }
 const TableRow = (props) => {
