@@ -31,3 +31,7 @@ img.thumbnail{
 img.img-opacity{
   opacity: 0.7
 }
+.filter-card {
+  max-width: 10rem;
+  min-width: 6rem;
+}

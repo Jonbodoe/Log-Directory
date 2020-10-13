@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Module from '../../../Components/Module';
 // import Container from '../../../Components/Container';
 import Title from '../../../Components/Title';
 // import PropTypes from 'prop-types';
@@ -29,35 +30,37 @@ const Slider = () => {
     }
     return <>
         <Title title={`Slider`} />
-        <div className="d-flex">
+        <Module>
+            <div className="d-flex">
 
-            <div className="align-self-center">
-                <button className="btn btn-success m-5"
-                    disabled={slide > 0 ? false : true}
-                    onClick={() => onSetSlide(-1)}
-                >
-                    <i className="fas fa-chevron-left p-2"></i>
-                </button>
-            </div>
-            <div>
-                <CurrentImage state={slide} />
-                <div className="d-flex justify-content-around">
-                {
-                    data.map((img, index) =>
-                        <LightBoxImages key={index} img={img} index={index} state={slide} handler={setSlide} />
-                    )
-                }
+                <div className="align-self-center">
+                    <button className="btn btn-success m-5"
+                        disabled={slide > 0 ? false : true}
+                        onClick={() => onSetSlide(-1)}
+                    >
+                        <i className="fas fa-chevron-left p-2"></i>
+                    </button>
+                </div>
+                <div>
+                    <CurrentImage state={slide} />
+                    <div className="d-flex justify-content-around">
+                        {
+                            data.map((img, index) =>
+                                <LightBoxImages key={index} img={img} index={index} state={slide} handler={setSlide} />
+                            )
+                        }
+                    </div>
+                </div>
+                <div className="align-self-center">
+                    <button className="btn btn-success m-5"
+                        disabled={slide < data.length - 1 ? false : true}
+                        onClick={() => onSetSlide(+1)}
+                    >
+                        <i className="fas fa-chevron-right p-2"></i>
+                    </button>
                 </div>
             </div>
-            <div className="align-self-center">
-                <button className="btn btn-success m-5"
-                    disabled={slide < data.length - 1 ? false : true}
-                    onClick={() => onSetSlide(+1)}
-                >
-                    <i className="fas fa-chevron-right p-2"></i>
-                </button>
-            </div>
-        </div>
+        </Module>
     </>
 }
 
