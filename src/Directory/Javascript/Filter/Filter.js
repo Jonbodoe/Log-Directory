@@ -6,23 +6,49 @@ import Title from '../../../Components/Title';
 // import Container from '../../../Components';
 import data from './Data';
 
+
+const getCategories = () => {
+    const newArray = []
+    data.forEach(img => newArray.push(img.category))
+    return [...new Set(newArray)]
+}
+
+const isChecked = (state, category) => {
+    return state.indexOf(category) >= 0 ? true : false
+}
+
+const filterHandler = (e, handler, state) => {
+    console.log(e.target)
+    if (isChecked(state, e.target.value)) {
+        return handler(state.filter(category => category !== e.target.value))
+    }
+    handler(state.concat(e.target.value))
+}
+
 const Filter = () => {
-    const [selected, setSelected] = useState([])
+    const [selected, setSelected] = useState([
+        "Flim", "Architecture"
+    ])
+    console.log(selected)
     return <>
-                <Title title={'Filter'} />
+        <Title title={'Filter'} />
         <Module>
             <div className="d-flex">
                 <div className="h-100 pr-md-5">
-                    <RadioInputs />
+                    <fieldset>
+                        <RadioInputs handler={setSelected} state={selected} />
+                    </fieldset>
                 </div>
                 <div className="">
-                    <ImageTotal />
-                    <GetImages />
+                    <FilterButtons handler={setSelected} state={selected} />
+                    {/* <ImageTotal /> */}
+                    <GetImages state={selected} data={data} />
                 </div>
             </div>
         </Module>
     </>
 }
+
 const RadioInputs = (props) => {
     const categories = getCategories()
     return <>
@@ -30,8 +56,13 @@ const RadioInputs = (props) => {
         {
             categories.map(category =>
                 <div key={category} className="form-check">
-                    <input className="form-check-input" type="checkbox" name={category} />
-                    <label className="form-check-label" >
+                    <input
+                        className="form-check-input"
+                        type="checkbox" value={`${category}`}
+                        checked={isChecked(props.state, category)}
+                        onChange={(e) => filterHandler(e, props.handler, props.state)}
+                    />
+                    <label className="form-check-label">
                         {category}
                     </label>
                 </div>
@@ -39,32 +70,46 @@ const RadioInputs = (props) => {
         }
     </>
 }
-
-const getCategories = () => {
-    const newArray = []
-    data.map(img => newArray.push(img.category))
-    return [...new Set(newArray)]
+const FilterButtons = (props) => {
+    return <div className="py-3">
+        {
+            props.state.map(category =>
+                <button
+                    key={category}
+                    className="btn btn-success mx-1"
+                    value={category}
+                    onClick={(e) => filterHandler(e, props.handler, props.state)}
+                >
+                    {category}
+                    {/* <i className="fas fa-times ml-2"></i> */}
+                </button>
+            )
+        }
+    </div>
 }
 
 const GetImages = (props) => {
+    const filteredList = props.data.filter(img => props.state.includes(img.category))
     return <>
         {
-            data.map(img =>
-                <img className="filter-card m-1" src={img.src} alt="Card cap" />
+            filteredList.map(img =>
+                <img key={img.src} className="filter-card m-1" src={img.src} alt="Card cap" />
             )
         }
     </>
 }
-const ImageTotal = (props) => {
-    return <>
-        <p className="text-success h4 pb-3">Results {data.length}</p>
-    </>
-}
-// console.log(getCategories())
+// const ImageTotal = (props) => {
+//     return <>
+//         <p className="text-success h4 pb-3">Results {data.length}</p>
+//     </>
+// }
 
-// State
-// --- Selected
-// ---
+
+
+// State 
+// --- Selected filter if is in state list
+// Event
+// --- Add or remove from state list based on selected filter function ^^^
 // Create categories
 // Cards
 // Radio Inputs

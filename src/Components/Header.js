@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = (props) => {
-    return <div className="py-5">
+    return <div className="pt-5 pb-3">
         <h1 className="text-dark font-weight-bold">
             {props.title}
         </h1>

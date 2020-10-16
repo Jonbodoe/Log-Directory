@@ -1,24 +1,27 @@
 import React from 'react'
+import Tabs from './Directory/Javascript/Tabs/Tabs';
+import Slider from './Directory/Javascript/Slider/Slider'
+import Filter from './Directory/Javascript/Filter/Filter'
 
-const DirectoryData = {
+const directoryData = {
     JavascriptCategories: [
         {
             category: "User Interfaces",
             componentList: [
                 {
-                    component: <></>,
+                    component: <Tabs/>,
                     title: 'Tab Display',
-                    published: true
+                    // published: true
                 },
                 {
-                    component: <></>,
+                    component: <Slider/>,
                     title: 'Slider',
-                    published: false
+                    // published: false
                 },
                 {
-                    component: <></>,
+                    component: <Filter/>,
                     title: 'Filter Categories',
-                    published: false
+                    // published: false
                 }
             ]
         },
@@ -65,4 +68,4 @@ const DirectoryData = {
     ]
 }
 
-export default DirectoryData;
+export default directoryData;
