@@ -21,15 +21,15 @@ const Http = () => {
     // console.log(monsterList)
     return (
         <>
-            <Title title={`Tabs`} />
+            <Title title={`Table Data`} />
             <table className="table">
                 {/* <TableRow/> */}
                 <thead>
                     <tr>
-                        <th className="text-primary" scope="col">Name</th>
-                        <th className="text-primary" scope="col">Size</th>
-                        <th className="text-primary" scope="col">Type</th>
-                        <th className="text-primary" scope="col">Alignment</th>
+                        <th className="text-success" scope="col">Name</th>
+                        <th className="text-success" scope="col">Size</th>
+                        <th className="text-success" scope="col">Type</th>
+                        <th className="text-success" scope="col">Alignment</th>
                     </tr>
                 </thead>
                 {/* <tbody> */}

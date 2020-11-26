@@ -2,70 +2,57 @@ import React from 'react'
 import Tabs from './Directory/Javascript/Tabs/Tabs';
 import Slider from './Directory/Javascript/Slider/Slider'
 import Filter from './Directory/Javascript/Filter/Filter'
+import Http from './Directory/Javascript/HTTP/Http'
 
-const directoryData = {
-    JavascriptCategories: [
-        {
-            category: "User Interfaces",
-            componentList: [
-                {
-                    component: <Tabs/>,
-                    title: 'Tab Display',
-                    // published: true
-                },
-                {
-                    component: <Slider/>,
-                    title: 'Slider',
-                    // published: false
-                },
-                {
-                    component: <Filter/>,
-                    title: 'Filter Categories',
-                    // published: false
-                }
-            ]
-        },
-        {
-            category: 'Async Concepts',
-            componentList: [
-                {
-                    component: <></>,
-                    title: 'Api Handling',
-                    published: false
-                },
-                {
-                    component: <></>,
-                    title: 'Layout Loader',
-                    published: false
-                }
-            ]
-        },
-        {
-            category: 'Timers, Dates, Math',
-            componentList: []
-        },
-        {
-            category: 'Closures & Prototypes',
-            componentList: []
-        }
-    ],
-    CssCategories : [
-        {
-            category: "CCS Animations",
-            componentList: [
-                {
-                    component: <></>,
-                    title: '',
-                    published: false
-                },
-                {
-                    component: <></>,
-                    title: '',
-                    published: false
-                }
-            ]
-        },
-    ]
-}
+// import JavascriptDirectory from './Routes/JavascriptDirectory';
+// import CSSDirectory from './Routes/CSSDirectory';
+// import UICategory from './Routes/UICategory';
+
+const directoryData = [
+    {
+        UICategories: [
+            {
+                component: <Tabs />,
+                title: 'Tab Display',
+                slug: '/tabs',
+            },
+            {
+                component: <Slider />,
+                title: 'Slider',
+                slug: '/slider',
+            },
+            {
+                component: <Filter />,
+                title: 'Filter Categories',
+                slug: '/filter',
+            },
+            {
+                component: <Http/>,
+                title: 'Filter Categories',
+                slug: '/filter',
+            }
+        ]
+    },
+    {
+        DataHandling: [
+            {
+                component: <></>,
+                title: 'Layout Loader',
+                slug: '/layout-loader',
+            },
+            {
+                component: <></>,
+                title: 'Async Handling',
+                slug: '/async-handling',
+                description: '3 functions pulling data to see which ones appear first, with re-fresh button'
+            },
+            {
+                component: <></>,
+                title: '',
+                slug: '/filter',
+            },
+        ]
+    }
+]
 
 export default directoryData;

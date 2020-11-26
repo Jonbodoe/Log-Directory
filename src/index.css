@@ -25,8 +25,8 @@ img.img-med{
 }
 img.thumbnail{
   height: auto;
-  min-width: 6rem;
-  max-width: 9.5rem;
+  min-width: 4rem;
+  max-width: 7.5rem;
 }
 img.img-opacity{
   opacity: 0.7
@@ -34,4 +34,7 @@ img.img-opacity{
 .filter-card {
   max-width: 11.5rem;
   min-width: 6rem;
+}
+.container-content{
+  max-width: 1500px;
 }

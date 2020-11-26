@@ -17,12 +17,11 @@ const isChecked = (state, category) => {
     return state.indexOf(category) >= 0 ? true : false
 }
 
-const filterHandler = (e, handler, state) => {
-    console.log(e.target)
-    if (isChecked(state, e.target.value)) {
-        return handler(state.filter(category => category !== e.target.value))
+const filterHandler = (category, handler, state) => {
+    if (isChecked(state, category)) {
+        return handler(state.filter(item => item !== category))
     }
-    handler(state.concat(e.target.value))
+    handler(state.concat(category))
 }
 
 const Filter = () => {
@@ -60,7 +59,7 @@ const RadioInputs = (props) => {
                         className="form-check-input"
                         type="checkbox" value={`${category}`}
                         checked={isChecked(props.state, category)}
-                        onChange={(e) => filterHandler(e, props.handler, props.state)}
+                        onChange={() => filterHandler(category, props.handler, props.state)}
                     />
                     <label className="form-check-label">
                         {category}
@@ -71,17 +70,17 @@ const RadioInputs = (props) => {
     </>
 }
 const FilterButtons = (props) => {
-    return <div className="py-3">
+    return <div className="pb-3">
         {
             props.state.map(category =>
                 <button
                     key={category}
                     className="btn btn-success mx-1"
                     value={category}
-                    onClick={(e) => filterHandler(e, props.handler, props.state)}
+                    onClick={() => filterHandler(category, props.handler, props.state)}
                 >
                     {category}
-                    {/* <i className="fas fa-times ml-2"></i> */}
+                    <i className="fas fa-times ml-2"></i>
                 </button>
             )
         }
@@ -92,7 +91,12 @@ const GetImages = (props) => {
     const filteredList = props.data.filter(img => props.state.includes(img.category))
     return <>
         {
+            filteredList.length > 0 ?
             filteredList.map(img =>
+                <img key={img.src} className="filter-card m-1" src={img.src} alt="Card cap" />
+            )
+            :
+            props.data.map(img =>
                 <img key={img.src} className="filter-card m-1" src={img.src} alt="Card cap" />
             )
         }
