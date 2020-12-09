@@ -9,7 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from './Components/Container';
 import Navigation from './Components/Navigation';
 // import directoryData from '.App.test/DirectoryData'
-import JavascriptDirectory from './Routes/JavascriptDirectory'
+import FrontendUI from './Pages/FrontendUI'
+import CSSDirectory from './Pages/CSSDirectory';
+import BackendHandling from './Pages/BackendHandling';
+import HomeDirectory from './Pages/HomeDirectory'
 // import directoryData from './DirectoryData'
 import {
   BrowserRouter as Router,
@@ -17,7 +20,7 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import CSSDirectory from './Routes/CSSDirectory';
+
 
 // import Http from './Directory/Javascript/HTTP/Http';
 
@@ -25,15 +28,18 @@ import CSSDirectory from './Routes/CSSDirectory';
 function App() {
   return (
     <Router>
+      <Navigation />
       <Container>
-        <div className="col-md-2 h-100 fixed-top bg-gray border-right">
-          <Navigation />
-        </div>
-        <div className="col-md-2"></div>
-        <div className="col-md-10 px-5 py-3">
+        <div className="col-md-12 px-5">
           <Switch>
-            <Route path="/javascript-directory">
-              <JavascriptDirectory />
+            <Route exact path="/">
+              <HomeDirectory/>
+            </Route>
+            <Route path="/frontend-ui">
+              <FrontendUI />
+            </Route>
+            <Route path="/backend-handling">
+              <BackendHandling />
             </Route>
             <Route path="/css-directory">
               <CSSDirectory />

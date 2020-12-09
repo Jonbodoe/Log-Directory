@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+nav a:hover{
+  text-decoration: none;
+}
 
 .active {
   display: inline-block;
@@ -37,4 +40,19 @@ img.img-opacity{
 }
 .container-content{
   max-width: 1500px;
+}
+#NavBar-Logo{
+  width: 5rem;
+}
+#home-page{
+  padding-top: 4.5rem;
+}
+.col-md-4 .directory-cards{
+  transition: all 0.3s;
+}
+.col-md-4 .directory-cards:hover{
+  transform: scale(0.95);
+}
+.col-md-4 .directory-cards a:hover{
+  text-decoration: none;
 }
