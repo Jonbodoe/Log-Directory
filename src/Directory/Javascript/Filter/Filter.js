@@ -28,7 +28,7 @@ const Filter = () => {
     const [selected, setSelected] = useState([
         "Flim", "Architecture"
     ])
-    console.log(selected)
+    // console.log(selected)
     return <>
         <Title title={'Filter'} />
         <Module>

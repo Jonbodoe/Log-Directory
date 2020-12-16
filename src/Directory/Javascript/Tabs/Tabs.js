@@ -75,12 +75,16 @@ const TabLabel = props => {
 const TabContent = props => {
     return <>
         <div className={props.index === props.state ? 'active' : 'not-active'}>
-            <div className="d-flex">
-                <div className="pr-5 align-self-center">
+            <div className="row">
+                <div className="col-md-6 d-flex ">
+                    <div className="align-self-center">
                     <h3 className="font-weight-bold">{props.content.title}</h3>
                     <p>{props.content.message}</p>
+                    </div>
                 </div>
-                <img className="img-fluid img-med" src={props.content.image} alt="hello" />
+                <div className="col-md-6">
+                    <img className="img-fluid" src={props.content.image} alt="hello" />
+                </div>
             </div>
         </div>
     </>

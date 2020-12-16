@@ -22,8 +22,8 @@ nav a:hover{
   display: none;
 }
 img.img-med{
-  height: 100%;
-  min-width: 10rem;
+  height: auto;
+  min-width: 5rem;
   max-width: 30rem;
 }
 img.thumbnail{

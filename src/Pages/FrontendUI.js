@@ -7,6 +7,8 @@ import Tabs from '../Directory/Javascript/Tabs/Tabs'
 import {
     Link
 } from "react-router-dom";
+import CourtesyNav from '../Components/CourtesyNav';
+// import DirectoryURLs from '../Routes/DirectoryURLs';
 // import UICategory from './UICategory';
 // import {
 //     BrowserRouter as Router,
@@ -24,6 +26,8 @@ const FrontendUI = () => {
                         <div className="d-flex flex-column">
                             <p className="font-weight-bold h5">Components</p>
                             
+                            {/* Create Accordian Navigation */}
+                            <CourtesyNav/>
                             <Link className="py-1 text-success font-weight-bold" to="/frontend-ui">Frontend UI</Link>
                             <Link className="py-1 text-secondary" to="/#tabs">Tabs</Link>
                             <Link className="py-1 text-secondary" to="/#slider">Slider</Link>
