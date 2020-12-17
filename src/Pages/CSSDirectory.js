@@ -1,18 +1,16 @@
 import React from 'react';
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route,
-//     Link
-// } from "react-router-dom";
+import Header from '../Components/Header';
+import CourtesyNav from '../Components/CourtesyNav';
+import Container from '../Components/Container';
 
 const CSSDirectory = (props) => {
     return <>
-    <div>CSS</div>
-        {/* {
-            props.routes.length ?
-            props.routes.map(route => route.component) : 'No Components Available At The Moment'
-        } */}
+        <Container>
+            <CourtesyNav />
+            <div className="col-md-10 p-5">
+                <Header title={`CSS Animations`} subTitle={`Hybrid of using Javascript and CSS for fun!`} />
+            </div>
+        </Container>
     </>
 }
 
