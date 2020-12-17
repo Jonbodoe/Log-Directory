@@ -12,12 +12,12 @@ import log from './../log.svg';
 
 const Navigation = () => {
     return <>
-        <nav className="bg-white d-flex justify-content-between px-5">
-            <div className="navbar-brand font-weight-bold pb-4 d-flex">
+        <nav className="bg-white d-flex justify-content-between pb-4">
+            {/* <div className="navbar-brand d-flex"> */}
                 <Link className="text-success" to="../">
                     <img className="text-success" id="NavBar-Logo" src={log} alt="brand logo" />
                 </Link>
-            </div>
+            {/* </div> */}
             <div className="d-flex align-items-center">
                 {
                     DirectoryURLs.map((urls, i) => {

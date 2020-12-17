@@ -39,6 +39,7 @@ const Filter = () => {
                     </fieldset>
                 </div>
                 <div className="">
+                    <div className="pb-2 font-weight-bold text-secondary">Selected:</div>
                     <FilterButtons handler={setSelected} state={selected} />
                     {/* <ImageTotal /> */}
                     <GetImages state={selected} data={data} />
@@ -75,7 +76,7 @@ const FilterButtons = (props) => {
             props.state.map(category =>
                 <button
                     key={category}
-                    className="btn btn-success mx-1"
+                    className="btn btn-success m-1"
                     value={category}
                     onClick={() => filterHandler(category, props.handler, props.state)}
                 >
@@ -95,10 +96,12 @@ const GetImages = (props) => {
             filteredList.map(img =>
                 <img key={img.src} className="filter-card m-1" src={img.src} alt="Card cap" />
             )
+            // displays whats filtered 
             :
             props.data.map(img =>
                 <img key={img.src} className="filter-card m-1" src={img.src} alt="Card cap" />
             )
+            // displays everything based on list if nothing
         }
     </>
 }

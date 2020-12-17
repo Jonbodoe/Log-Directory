@@ -8,14 +8,13 @@ import {
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from './Components/Container';
-import Navigation from './Components/Navigation';
+// import Navigation from './Components/Navigation';
 import DirectoryURLs from './Routes/DirectoryURLs';
 
 
 function App() {
   return (
     <Router>
-      <Navigation />
       <Container>
         <div className="col-md-12 px-5">
           <Switch>

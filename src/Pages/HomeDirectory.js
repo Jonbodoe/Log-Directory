@@ -8,6 +8,7 @@ import {
 import photoWidget1 from './../Images/WebAssets-01.png';
 import photoWidget2 from './../Images/WebAssets-02.png'
 import photoWidget3 from './../Images/WebAssets-03.png'
+import Navigation from '../Components/Navigation';
 
 
 const WidgetData = [
@@ -35,6 +36,7 @@ const HomeDirectory = () => {
     return <>
         {/* <div class="container"> */}
         <div id="home-page"></div>
+        <Navigation/>
         <Header title={`View Directories`} subTitle={`From API requests to User Interface components`} />
         <div className="row d-flex justify-content-around py-3">
             {

@@ -73,7 +73,7 @@ const DirectoryURLs =  [
                 {
                     label: "Upload Image",
                     parentId: "BACKEND",
-                    url: "/backend-handling/upload-image"
+                    url: "/backend-handling/#upload-image"
                 },
             ],
             url: "/backend-handling"

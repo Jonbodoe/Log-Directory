@@ -5,6 +5,7 @@ import {
     Link,
     useLocation
 } from "react-router-dom";
+import log from './../log.svg';
 
 const NavLinks = (props) => {
     const location = useLocation();
@@ -35,6 +36,9 @@ const CourtesyNav = () => {
             <div className="sticky-top pr-4">
                 <div className="row">
                     {/* <div className="row"> */}
+                    <Link className="text-success pt-4" to="../">
+                        <img className="text-success" id="NavBar-Logo" src={log} alt="brand logo" />
+                    </Link>
                     <p className="font-weight-bold h5 pt-3">Components</p>
                     {/* Create Accordian Navigation */}
                     {
