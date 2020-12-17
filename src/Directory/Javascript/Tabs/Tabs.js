@@ -30,7 +30,7 @@ const Tabs = () => {
     const [activeTab, setActiveState] = useState(0)
     return (
         <>
-            <Title title={`Tabs`} />
+            <Title title={`Tabs`} id="tabs"/>
             <Module>
                 <div>
                     <div className="row">

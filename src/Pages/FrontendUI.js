@@ -22,19 +22,13 @@ const FrontendUI = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-2 border-right">
-                    <div className="sticky-top p-4">
-                        <div className="d-flex flex-column">
-                            <p className="font-weight-bold h5">Components</p>
-                            
+                    <div className="sticky-top pr-4">
+                        <div className="row">
+                            {/* <div className="row"> */}
+                            <p className="font-weight-bold h5 pt-3">Components</p>
                             {/* Create Accordian Navigation */}
                             <CourtesyNav/>
-                            <Link className="py-1 text-success font-weight-bold" to="/frontend-ui">Frontend UI</Link>
-                            <Link className="py-1 text-secondary" to="/#tabs">Tabs</Link>
-                            <Link className="py-1 text-secondary" to="/#slider">Slider</Link>
-                            <Link className="py-1 text-secondary" to="/#filter">Filter</Link>
-                            <Link className="py-1 text-secondary" to="/#tableData">Table Data</Link>
-                            <Link className="py-1 text-success font-weight-bold" to="/Backend-Handling">Backend Handling</Link>
-                            <Link className="py-1 text-success font-weight-bold" to="/CSS-Animations">CSS Animations</Link>
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>

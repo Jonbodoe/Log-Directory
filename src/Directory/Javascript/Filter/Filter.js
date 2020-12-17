@@ -30,7 +30,7 @@ const Filter = () => {
     ])
     // console.log(selected)
     return <>
-        <Title title={'Filter'} />
+        <Title title={'Filter'} id={'filter'}/>
         <Module>
             <div className="d-flex">
                 <div className="h-100 pr-md-5">

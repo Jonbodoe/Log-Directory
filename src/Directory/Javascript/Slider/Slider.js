@@ -29,7 +29,7 @@ const Slider = () => {
         setSlide(slide + num)
     }
     return <>
-        <Title title={`Slider`} />
+        <Title title={`Slider`} id={'slider'}/>
         <Module>
             <div className="d-flex">
 
