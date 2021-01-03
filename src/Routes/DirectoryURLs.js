@@ -34,6 +34,11 @@ const DirectoryURLs =  [
                     url: "/frontend-ui#slider"
                 },
                 {
+                    label: "Carousel",
+                    parentId: "FRONTEND",
+                    url: "/frontend-ui#carousel"
+                },
+                {
                     label: "Filter",
                     parentId: "FRONTEND",
                     url: "/frontend-ui#filter"
@@ -51,14 +56,10 @@ const DirectoryURLs =  [
             id: "BACKEND",
             component: BackendHandling,
             subPages: [
-                // {
-                //     label: "Backend Handling",
-                //     url: "/backend-handling"
-                // },
                 {
-                    label: "Facebook API",
+                    label: "Twitter API",
                     parentId: "BACKEND",
-                    url: "/backend-handling#facebook-api"
+                    url: "/backend-handling#twitter-api"
                 },
                 {
                     label: "Google Maps API",
@@ -73,7 +74,7 @@ const DirectoryURLs =  [
                 {
                     label: "Upload Image",
                     parentId: "BACKEND",
-                    url: "/backend-handling/#upload-image"
+                    url: "/backend-handling#upload-image"
                 },
             ],
             url: "/backend-handling"
