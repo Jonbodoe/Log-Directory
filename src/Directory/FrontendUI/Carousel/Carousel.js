@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Module from '../../../Components/Module';
 import Title from '../../../Components/Title';
 
@@ -45,7 +45,7 @@ const data = [
 const spliceImageList = (data) => {
     // roundUpNumber(Math.floor(data.length % 3))
     // let numberOfArrays = Math.floor(data.length % 3)
-    const newArray = [];
+    // const newArray = [];
     let imgColumn = 3
     // const numbers = [0,3,6];
     return data.forEach((img, i) => {

@@ -6,7 +6,7 @@ import {
     // Route,
     Link
 } from "react-router-dom";
-import DirectoryURLs from '../Routes/DirectoryURLs';
+import DirectoryURLs from '../Data/DirectoryData';
 import log from './../log.svg';
 // import JavascriptDirectory from '../Routes/JavascriptDirectory';
 

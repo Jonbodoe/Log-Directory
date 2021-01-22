@@ -61,3 +61,7 @@ img.img-opacity{
 .col-md-4 .directory-cards a:hover{
   text-decoration: none;
 }
+
+.navigation {
+  height: 100vh;
+}

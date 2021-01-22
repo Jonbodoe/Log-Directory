@@ -1,61 +1,58 @@
+import React from 'react';
+import Filter from '../Directory/FrontendUI/Filter/Filter';
+import Http from '../Directory/FrontendUI/HTTP/Http';
+import Slider from '../Directory/FrontendUI/Slider/Slider';
+import Tabs from '../Directory/FrontendUI/Tabs/Tabs';
 
-// import React from 'react';
-import HomeDirectory from './../Pages/HomeDirectory'
-import FrontendUI from './../Pages/FrontendUI';
-import BackendHandling from './../Pages/BackendHandling';
-import CSSAnimations from './../Pages/CSSDirectory';
-
-const DirectoryURLs =  [
+const DirectoryData =  [
 
         {
             label: "Home",
             id: 'HOME',
-            component: HomeDirectory,
+            header: 'View Directories',
+            subTitle: 'From API requests to User Interface components',
             subPages: false,
             url: "/"
         },
         {
             label: "Frontend UI",
             id: "FRONTEND",
-            component: FrontendUI,
+            header: 'Frontend UI',
+            subTitle: 'User Interface Components',
             subPages:[
-                // {
-                //     label: "Frontend UI",
-                //     url: "/frontend-ui"
-                // },
                 {
                     label: "Tabs",
                     parentId: "FRONTEND",
+                    component: <Tabs/>,
                     url: "/frontend-ui#tabs"
                 },
                 {
                     label: "Slider",
                     parentId: "FRONTEND",
+                    component: <Slider/>,
                     url: "/frontend-ui#slider"
-                },
-                {
-                    label: "Carousel",
-                    parentId: "FRONTEND",
-                    url: "/frontend-ui#carousel"
                 },
                 {
                     label: "Filter",
                     parentId: "FRONTEND",
+                    component: <Filter/>,
                     url: "/frontend-ui#filter"
                 },
-                {
-                    label: "HTTP",
-                    parentId: "FRONTEND",
-                    url: "/frontend-ui#http"
-                }
             ],
             url: "/frontend-ui"
         },
         {
             label: "Backend Handling",
             id: "BACKEND",
-            component: BackendHandling,
+            header: 'Backend Handling',
+            subTitle: 'From API requests fun from various services',
             subPages: [
+                {
+                    label: "HTTP",
+                    parentId: "BACKEND",
+                    component: <Http/>,
+                    url: "/backend-handling#http"
+                },
                 {
                     label: "Twitter API",
                     parentId: "BACKEND",
@@ -82,7 +79,8 @@ const DirectoryURLs =  [
         {
             label: "CSS Animations",
             id: "CSS",
-            component: CSSAnimations,
+            header: 'CSS Animations',
+            subTitle: 'Hybrid of using Javascript and CSS for fun!',
             subPages: [
                 // {
                 //     label: "CSS Animations",
@@ -153,4 +151,4 @@ const DirectoryURLs =  [
     // ]
 // }
 
-export default DirectoryURLs
+export default DirectoryData

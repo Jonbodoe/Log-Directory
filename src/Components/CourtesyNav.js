@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import DirectoryURLs from '../Routes/DirectoryURLs';
+import DirectoryData from '../Data/DirectoryData';
 import {
     Link,
     useLocation
@@ -30,10 +30,10 @@ const NavLinks = (props) => {
 
 const CourtesyNav = () => {
     const [activeLink, setActiveLink] = useState()
-    const getLinks = DirectoryURLs.filter(urls => urls.subPages)
+    const getLinks = DirectoryData.filter(urls => urls.subPages)
     return <>
         <div className="col-md-2 border-right">
-            <div className="sticky-top pr-4">
+            <div className="sticky-top pr-4 navigation">
                 <div className="row">
                     {/* <div className="row"> */}
                     <Link className="text-success pt-4" to="../">
